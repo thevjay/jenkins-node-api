@@ -28,6 +28,17 @@ pipeline {
             }
         }
 
+        stage('Build') {
+            steps {
+                echo 'Validating Node.js application...'
+
+                sh 'node --check src/app.js'
+                sh 'node --check src/server.js'
+
+                echo 'Application validation completed!'
+            }
+        }
+
         stage('Run Tests') {
             steps {
                 echo 'Executing test cases...'
