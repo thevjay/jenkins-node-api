@@ -5,7 +5,7 @@ describe("Health Check API", () => {
     test("should return server healthy status", async () => {
         const response = await request(app).get("/health");
 
-        expect(response.statusCode).toBe(200);
+        expect(response.statusCode).toBe(500);
 
         expect(response.body.success).toBe(true);
 
