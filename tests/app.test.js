@@ -12,6 +12,15 @@ describe("Health Check API", () => {
         expect(response.body.message)
             .toBe("Server is healthy");
     })
+    test("should return hello message", async () => {
+      const response = await request(app)
+        .get("/hello");
+
+      expect(response.statusCode).toBe(200);
+
+      expect(response.body.message)
+        .toBe("Hello from Jenkins CI!");
+    });
 });
 
 describe("Users API", () => {

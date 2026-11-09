@@ -26,6 +26,12 @@ app.get("/health", (req, res) => {
     });
 });
 
+app.get("/hello", (req, res) => {
+  res.status(200).json({
+    message: "Hello from Jenkins CI!"
+  });
+});
+
 // Get all users API
 app.get("/api/users", (req,res) => {
     res.status(200).json({
